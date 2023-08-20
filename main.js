@@ -1,68 +1,31 @@
-const numberOne = 1;
-const numberTwo = 12.34;
-const firstName = 'Oksana';
-const surname = 'Aleksandrova';
-const boolenOne = true;
-const boolenTwo = false;
+let equallyButton = document.querySelector('.equally');
+let numberOne = document.querySelector('.number-one');
+let numberTwo = document.querySelector('.number-two');
+let resultSpan = document.querySelector('.result');
+let result;
+function selectChanged(value) {
+  let numberOneValue = +numberOne.value;
+  let numberTwoValue = +numberTwo.value;
 
-// operation with numbers
-let summ = numberOne + numberTwo;
-let subtract = numberTwo - numberOne;
-let multi = numberOne * numberTwo;
-let divide = numberTwo / numberOne;
-let remains = numberTwo % numberOne;
-console.log(summ, subtract, multi, divide, remains);
-//typeof variables
-console.log(
-  typeof numberOne,
-  typeof numberTwo,
-  typeof firstName,
-  typeof surname,
-  typeof boolenOne,
-  typeof boolenTwo
-);
-//PART TWO
-let str = 'I learning javascript';
-const arrayWordds = str.split(',');
-console.log(arrayWordds);
-// Calc
+  switch (value) {
+    case '1':
+      return (result = numberOneValue + numberTwoValue);
 
-function calc(a, b) {
-  if (typeof a == 'string' || typeof b == 'string') {
-    console.log('Введите число');
-  } else {
-    console.log(a * b);
+      break;
+    case '4':
+      return (result = numberOneValue * numberTwoValue);
+
+      break;
+    case '2':
+      return (result = numberOneValue - numberTwoValue);
+
+      break;
+    case '3':
+      return (result = numberOneValue / numberTwoValue);
   }
+  return result;
 }
-calc(7, 'a');
-
-// Prime numbers
-
-function isPrime(num) {
-  if (num <= 1) {
-    console.log(false);
-  }
-  for (let i = 2, sqrt = Math.sqrt(num); i <= sqrt; i++) {
-    if (num % i === 0) {
-      console.log(false);
-    }
-  }
-  console.log(true);
+function equals() {
+  resultSpan.textContent = result;
 }
-isPrime(10);
-
-// random password
-
-function randomPassword(len) {
-  const chars =
-    '0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  let randomstring;
-  for (var i = 0; i < len; i++) {
-    randomstring = Math.random().toString(36).slice(-8);
-    let rnum = Math.floor(Math.random() * chars.length);
-    randomstring += chars.substring(rnum, rnum);
-  }
-
-  console.log(randomstring);
-}
-randomPassword(7);
+equallyButton.addEventListener('click', equals);
