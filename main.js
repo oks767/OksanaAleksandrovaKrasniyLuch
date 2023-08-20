@@ -1,27 +1,31 @@
-const numberOne = 1;
-const numberTwo = 12.34;
-const firstName = 'Oksana';
-const surname = 'Aleksandrova';
-const boolenOne = true;
-const boolenTwo = false;
+let equallyButton = document.querySelector('.equally');
+let numberOne = document.querySelector('.number-one');
+let numberTwo = document.querySelector('.number-two');
+let resultSpan = document.querySelector('.result');
+let result;
+function selectChanged(value) {
+  let numberOneValue = +numberOne.value;
+  let numberTwoValue = +numberTwo.value;
 
-// operation with numbers
-let summ = numberOne + numberTwo;
-let subtract = numberTwo - numberOne;
-let multi = numberOne * numberTwo;
-let divide = numberTwo / numberOne;
-let remains = numberTwo % numberOne;
-console.log(summ, subtract, multi, divide, remains);
-//typeof variables
-console.log(
-  typeof numberOne,
-  typeof numberTwo,
-  typeof firstName,
-  typeof surname,
-  typeof boolenOne,
-  typeof boolenTwo
-);
-//PART TWO
-let str = 'I learning javascript';
-const arrayWordds = str.split(',');
-console.log(arrayWordds);
+  switch (value) {
+    case '1':
+      return (result = numberOneValue + numberTwoValue);
+
+      break;
+    case '4':
+      return (result = numberOneValue * numberTwoValue);
+
+      break;
+    case '2':
+      return (result = numberOneValue - numberTwoValue);
+
+      break;
+    case '3':
+      return (result = numberOneValue / numberTwoValue);
+  }
+  return result;
+}
+function equals() {
+  resultSpan.textContent = result;
+}
+equallyButton.addEventListener('click', equals);

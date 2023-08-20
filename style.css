@@ -1,4 +1,29 @@
-.container {
-  width: calc(1555 - (161 + 174));
+.calc-container {
+  width: 360px;
   margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+input {
+  width: 70px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.result {
+  border: none;
+  outline: none;
+}
+.select {
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+  background: transparent;
+  cursor: pointer;
+}
+.select::-ms-expand {
+  display: none;
 }
