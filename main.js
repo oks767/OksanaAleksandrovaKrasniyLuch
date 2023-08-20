@@ -25,3 +25,18 @@ console.log(
 let str = 'I learning javascript';
 const arrayWordds = str.split(',');
 console.log(arrayWordds);
+// Array
+function rotateArray(k, array) {
+  for (i = 0; i < k; i++) array.unshift(array.pop());
+  console.log(array);
+}
+rotateArray(2, [2, 3, 4, 5, 6]);
+
+// fibonachi
+const fibo = (n) => {
+  if (n < 2) {
+    return n;
+  }
+  return fibo(n - 1) + fibo(n - 2);
+};
+fibo(5);
