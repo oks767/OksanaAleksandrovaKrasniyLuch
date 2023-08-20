@@ -7,7 +7,8 @@
     <title>Calc</title>
   </head>
   <body class="calc-container">
-    <input class="number-one" type="number" />
+<form class="form">
+  <input class="number-one" type="number" />
     <select onchange="selectChanged(this.value)" name="operator" id="operator">
       <option class="plus" value="1">+</option>
       <option class="minus" value="2">-</option>
@@ -16,6 +17,7 @@
     </select>
     <input class="number-two" type="number" />
     <button class="equally">=</button>
+</form>
     <span class="result">0</span>
     <script src="./main.js"></script>
   </body>
