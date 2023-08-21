@@ -56,12 +56,9 @@
 }
 .banner .img-absolute {
   position: absolute;
-  top: -10%;
+  top: -50%;
   right: -50%;
   border-radius: 821px;
-  background: var(--accent, #6bffca);
-  -webkit-filter: blur(120px);
-  filter: blur(120px);
   width: 821px;
   height: 821px;
 }
