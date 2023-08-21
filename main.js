@@ -57,7 +57,7 @@ const checkConfirmPassword = () => {
   return valid;
 };
 
-const isEmailValid = (email) => {
+const validateEmail = (email) => {
   const re =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(email);
@@ -105,11 +105,11 @@ form.addEventListener('submit', function (e) {
 
   // validate fields
 
-  let isEmailValid = checkEmail(),
+  let validateEmail = checkEmail(),
     isPasswordValid = checkPassword(),
     isConfirmPasswordValid = checkConfirmPassword();
 
-  let isFormValid = isEmailValid && isPasswordValid && isConfirmPasswordValid;
+  let isFormValid = validateEmail && isPasswordValid && isConfirmPasswordValid;
 
   // submit to the server if the form is valid
   if (isFormValid) {
@@ -134,9 +134,6 @@ form.addEventListener(
   'input',
   debounce(function (e) {
     switch (e.target.id) {
-      case 'username':
-        checkUsername();
-        break;
       case 'email':
         checkEmail();
         break;
