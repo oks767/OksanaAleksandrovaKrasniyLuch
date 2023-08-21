@@ -11,6 +11,7 @@ let obj = {};
 
 function deepClone(initialObj) {
   for (var key in initialObj.object[key]) {
+    //Почему если здесь использовать let key, то выдает ошибку ReferenceError: Cannot access 'key' before initialization?
     obj.object[key] = initialObj.object[key];
   }
   return initialObj;
