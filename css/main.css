@@ -28,7 +28,19 @@
 /* stylelint-disable value-keyword-case */
 @font-face {
   font-family: "Tahoma";
-  src: url("../resources/fonts/tahoma.woff2") format("woff2");
+  src: url("../fonts/tahoma.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Avenir-regular";
+  src: url("../fonts/Avenir-Roman.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Avenir-bold";
+  src: url("../fonts/Avenir-Black.woff2"), format("woff2");
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../fonts/Avenir-Oblique.woff2") format("woff2");
 }
 html {
   -webkit-box-sizing: border-box;
@@ -139,9 +151,14 @@ a {
   position: relative;
 }
 
+h1 {
+  margin: 0;
+}
+
 .header {
   height: 110px;
   padding-top: 23px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   -webkit-box-shadow: 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
   box-shadow: 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
   background-color: #f3f7ef;
@@ -205,5 +222,73 @@ a {
 
 .nav__item--center {
   margin-left: 28px;
+}
+
+.banner {
+  background: #f3f6ef;
+  padding-top: 127px;
+  padding-bottom: 94px;
+}
+.banner__title {
+  width: 434px;
+  color: #2f2a37;
+  font-family: "Avenir-bold", sans-serif;
+  font-size: 54px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 115%;
+}
+.banner__text {
+  color: #6e6c72;
+  margin-top: 31px;
+  /* Text */
+  font-family: Avenir, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 24px */
+  width: 432px;
+}
+.banner__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+}
+.banner__button {
+  color: var(--ed-space, #2f2a37);
+  font-family: Avenir, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 16.8px */
+  text-transform: uppercase;
+  border-radius: 40px;
+  border: 1px solid transparent;
+  background: var(--gradient, linear-gradient(129deg, #6bffca 0%, #00ff47 100%));
+  padding: 19px 27px;
+  margin-top: 74px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.banner__button:hover {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+}
+.banner .img-absolute {
+  position: absolute;
+  top: -10%;
+  right: -50%;
+  border-radius: 821px;
+  background: var(--accent, #6bffca);
+  -webkit-filter: blur(120px);
+  filter: blur(120px);
+  width: 821px;
+  height: 821px;
 }
 /*# sourceMappingURL=main.css.map */
