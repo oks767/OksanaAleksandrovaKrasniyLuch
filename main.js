@@ -10,7 +10,7 @@ const checkEmail = () => {
   const email = emailEl.value.trim();
   if (!isRequired(email)) {
     showError(emailEl, 'Email cannot be blank.');
-  } else if (!isEmailValid(email)) {
+  } else if (!validateEmail(email)) {
     showError(emailEl, 'Email is not valid.');
   } else {
     showSuccess(emailEl);
