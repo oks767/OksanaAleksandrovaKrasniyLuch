@@ -20,6 +20,7 @@ console.log('components');
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions_mobile_check__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./functions/mobile-check */ "./src/js/functions/mobile-check.js");
+/* harmony import */ var _functions_menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./functions/menu */ "./src/js/functions/menu.js");
 // Данный файл - лишь собрание подключений готовых компонентов.
 // Рекомендуется создавать отдельный файл в папке components и подключать все там
 
@@ -27,6 +28,9 @@ __webpack_require__.r(__webpack_exports__);
 
 console.log((0,_functions_mobile_check__WEBPACK_IMPORTED_MODULE_0__.mobileCheck)());
 
+
+(0,_functions_menu__WEBPACK_IMPORTED_MODULE_1__.getMenu)();
+(0,_functions_menu__WEBPACK_IMPORTED_MODULE_1__.closeMenu)();
 // Определение ширины экрана
 // import { isMobile, isTablet, isDesktop } from './functions/check-viewport';
 // if (isDesktop()) {
@@ -140,6 +144,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vendor_focus_visible_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vendor/focus-visible.js */ "./src/js/vendor/focus-visible.js");
 /* harmony import */ var _vendor_focus_visible_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_vendor_focus_visible_js__WEBPACK_IMPORTED_MODULE_0__);
 
+
+/***/ }),
+
+/***/ "./src/js/functions/menu.js":
+/*!**********************************!*\
+  !*** ./src/js/functions/menu.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   closeMenu: () => (/* binding */ closeMenu),
+/* harmony export */   getMenu: () => (/* binding */ getMenu)
+/* harmony export */ });
+let menuMobile = document.querySelector(".nav");
+let closeButton = document.querySelector(".close");
+let menuButton = document.querySelector(".menu");
+const getMenu = () => {
+  menuButton.addEventListener("click", () => {
+    menuMobile.classList.add("nav--active");
+  });
+};
+const closeMenu = () => {
+  closeButton.addEventListener("click", () => {
+    menuMobile.classList.remove("nav--active");
+  });
+};
 
 /***/ }),
 

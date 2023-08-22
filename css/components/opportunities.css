@@ -14,6 +14,11 @@
   line-height: 115%; /* 46px */
   margin-bottom: 23px;
 }
+@media (max-width: 768px) {
+  .opportunities__title {
+    font-size: 30px;
+  }
+}
 .opportunities__text {
   color: var(--ed-space, #6e6c72);
   text-align: center;
@@ -27,6 +32,18 @@
   line-height: 120%; /* 24px */
   margin-bottom: 84px;
 }
+@media (max-width: 768px) {
+  .opportunities__text {
+    font-size: 20px;
+    width: 500px;
+  }
+}
+@media (max-width: 545px) {
+  .opportunities__text {
+    font-size: 16px;
+    width: 300px;
+  }
+}
 .opportunities__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -37,6 +54,13 @@
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   position: relative;
+}
+@media (max-width: 992px) {
+  .opportunities__inner {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
 }
 .opportunities__card {
   border-radius: 10px;
@@ -63,6 +87,18 @@
   box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.04), 11px 6px 48px 4px #36ff9f;
   -webkit-backdrop-filter: blur(5.5px);
   backdrop-filter: blur(5.5px);
+}
+@media (min-width: 900px) {
+  .opportunities__card {
+    margin-right: 30px;
+  }
+}
+@media (max-width: 410px) {
+  .opportunities__card {
+    width: 250px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
 }
 .opportunities__button {
   color: var(--ed-space, #2f2a37);
@@ -98,6 +134,11 @@
   font-weight: 500;
   line-height: 120%; /* 28.8px */
 }
+@media (max-width: 320px) {
+  .card-title {
+    font-size: 20px;
+  }
+}
 
 .card-text {
   color: var(--ed-space, #2f2a37);
@@ -120,6 +161,11 @@
   height: 900px;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+}
+@media (max-width: 992px) {
+  .ellipse-green {
+    top: 20%;
+  }
 }
 
 .ellipse-violet {
