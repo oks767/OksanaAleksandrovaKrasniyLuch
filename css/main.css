@@ -671,6 +671,11 @@ h2 {
     margin-right: 30px;
   }
 }
+@media (min-width: 1200px) {
+  .opportunities__card {
+    margin-right: 0;
+  }
+}
 @media (max-width: 410px) {
   .opportunities__card {
     width: 250px;
