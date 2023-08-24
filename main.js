@@ -22,6 +22,19 @@ function fetchData(object) {
     resolve(object);
   });
 }
+// Part two/number two
+function fetchDataTwo() {
+  fetch('./data.json', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8',
+    },
+  })
+    .then((response) => response.json())
+    .then((result) => console.log(JSON.stringify(result)));
+}
+fetchDataTwo();
+
 let promiseTwo = fetchData({ name: 'oksana', age: 25 });
 promiseTwo
   .then((object) => {
