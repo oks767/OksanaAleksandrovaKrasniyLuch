@@ -1,89 +1,51 @@
-// Part one
-function delayedPrint(message, delay) {
-  return new Promise(function (resolve, reject) {
-    setTimeout(function () {
-      resolve(message);
-    }, delay);
-  });
-}
-
-let promise = delayedPrint('hello, world', 2000);
-promise
-  .then((message) => {
-    console.log(message);
-  })
-  .catch((error) => {
+const data = './data.json';
+async function fetchData() {
+  try {
+    let response = await fetch(`${data}`);
+    let users = await response.json();
+    console.log(users);
+  } catch (error) {
     console.log(error);
-  });
-// Part two
+  }
+}
+fetchData();
 
-function fetchData(object) {
-  return new Promise(function (resolve, reject) {
-    resolve(object);
+// const usersIds = [1, 2, 3];
+// async function inParallel(list) {
+// здесь метод map возвращает undefined, я не понимаю почему
+//   let promises = list.map((item) => fetchData(item));
+//   const ids = await Promise.all(promises);
+//   console.log(ids);
+// }
+// inParallel(usersIds);
+
+// Рабочий вариант
+// Функция ожидания
+function wait(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
   });
 }
-// Part two/number two
-function fetchDataTwo() {
-  fetch('./data.json', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json;charset=utf-8',
-    },
-  })
-    .then((response) => response.json())
-    .then((result) => console.log(JSON.stringify(result)));
-}
-fetchDataTwo();
 
-let promiseTwo = fetchData({ name: 'oksana', age: 25 });
-promiseTwo
-  .then((object) => {
-    console.log(object);
-  })
-  .catch((error) => {
-    console.log(error);
+// Здесь создаем функцию, которая создает объект даты, высчитывает время выполнения и
+// выполняет параллельно promises
+async function myPromiseAll(promises) {
+  const starttime = new Date().getTime();
+  const timings = [];
+  promises.forEach((prom, ix) => {
+    prom.then(() => {
+      timings[ix] = new Date().getTime() - starttime;
+    });
   });
-// Part three
-
-function getDownload(message) {
-  return new Promise(function (resolve, reject) {
-    resolve(message);
-  });
+  const result = await Promise.all(promises);
+  return { result, timings };
 }
-let promiseThree = getDownload('Начинаю загрузку данных...');
-let timeOut = setTimeout(() => {
-  promiseThree
-    .then((message) => {
-      console.log(message);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-}, 2000);
-let getData = setTimeout(() => {
-  promiseTwo
-    .then((object) => {
-      console.log(object);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-}, 3000);
+// функция run, которая запускает весь процесс
+async function run() {
+  console.log('Starting stuff.');
+  const ret = await myPromiseAll([wait(1000), wait(2000)]);
+  console.log(ret.timings);
+  // console.log(ret.result); result of promises
+}
 
-// Part three/number two
-let timeOutTwo = setTimeout(() => {
-  promiseThree
-    .then((message) => {
-      console.log(message);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  promiseTwo
-    .then((object) => {
-      console.log(object);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-}, 2000);
+run();

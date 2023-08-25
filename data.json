@@ -1,4 +1,6 @@
 {
-    "name": "Robert", 
-    "age": "30"
+    "users":
+        [{"name": "Robert", 
+        "age": "30"}, 
+    {"name": "Oksana", "age": "25"}]
 }
