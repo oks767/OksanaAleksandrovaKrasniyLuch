@@ -1,4 +1,4 @@
-const data = './data.json';
+const data = `https://jsonplaceholder.typicode.com/posts`;
 async function fetchData() {
   try {
     let response = await fetch(`${data}`);
@@ -11,9 +11,9 @@ async function fetchData() {
 fetchData();
 
 // const usersIds = [1, 2, 3];
-// async function inParallel(list) {
-// здесь метод map возвращает undefined, я не понимаю почему
-//   let promises = list.map((item) => fetchData(item));
+// async function inParallel() {
+//   // здесь метод map возвращает undefined, я не понимаю почему, я пробовала разные способы выполнения
+//   let promises = usersIds.map((userId) => fetchData(userId));
 //   const ids = await Promise.all(promises);
 //   console.log(ids);
 // }
