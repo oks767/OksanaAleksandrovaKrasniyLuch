@@ -1,4 +1,5 @@
 // Part one
+import { getLocalStorage, updateLocal } from './localStorage.js';
 const emailEl = document.querySelector('#email');
 const passwordEl = document.querySelector('#password');
 const confirmPasswordEl = document.querySelector('#confirm-password');
@@ -114,6 +115,7 @@ form.addEventListener('submit', function (e) {
   // submit to the server if the form is valid
   if (isFormValid) {
   }
+  updateLocal();
 });
 
 const debounce = (fn, delay = 500) => {
@@ -173,3 +175,4 @@ let clonedObj = deepClone(initialObj);
 clonedObj.object.object2.array2[1].name = 'Vasya';
 console.log(initialObj);
 console.log(clonedObj);
+getLocalStorage();
